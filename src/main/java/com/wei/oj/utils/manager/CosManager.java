@@ -1,4 +1,4 @@
-package com.wei.oj.manager;
+package com.wei.oj.utils.manager;
 
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.model.PutObjectRequest;

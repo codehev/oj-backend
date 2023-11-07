@@ -1,7 +1,9 @@
 package com.wei.oj.service;
 
+import com.wei.oj.model.dto.questionSubmit.QuestionSubmitAddRequest;
 import com.wei.oj.model.entity.QuestionSubmit;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.wei.oj.model.entity.User;
 
 /**
 * @author whw12
@@ -9,5 +11,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-11-04 21:39:08
 */
 public interface QuestionSubmitService extends IService<QuestionSubmit> {
+    /**
+     * 题目提交
+     *
+     * @param questionSubmitAddRequest
+     * @param loginUser
+     * @return
+     */
+    long doQuestionSubmit(QuestionSubmitAddRequest questionSubmitAddRequest, User loginUser);
 
 }

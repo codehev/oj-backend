@@ -1,6 +1,8 @@
 package com.wei.oj.manager;
 
 import javax.annotation.Resource;
+
+import com.wei.oj.utils.manager.CosManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

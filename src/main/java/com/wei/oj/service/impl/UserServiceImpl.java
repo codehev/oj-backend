@@ -217,6 +217,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return true;
     }
 
+    /**
+     * 将信息脱敏（有选择性的展示字段）
+     * @param user
+     * @return
+     */
     @Override
     public LoginUserVO getLoginUserVO(User user) {
         if (user == null) {
@@ -227,6 +232,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return loginUserVO;
     }
 
+    /**
+     * 将信息脱敏（有选择性的展示字段）
+     * @param user
+     * @return
+     */
     @Override
     public UserVO getUserVO(User user) {
         if (user == null) {

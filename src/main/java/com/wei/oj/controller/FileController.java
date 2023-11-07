@@ -9,7 +9,7 @@ import com.wei.oj.model.entity.User;
 import com.wei.oj.model.enums.FileUploadBizEnum;
 import com.wei.oj.constant.FileConstant;
 import com.wei.oj.exception.BusinessException;
-import com.wei.oj.manager.CosManager;
+import com.wei.oj.utils.manager.CosManager;
 import com.wei.oj.service.UserService;
 import java.io.File;
 import java.util.Arrays;
