@@ -108,7 +108,7 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question>
         String sortField = questionQueryRequest.getSortField();
         String sortOrder = questionQueryRequest.getSortOrder();
 
-        // 拼接查询条件
+        // 拼接查询条件，第一个参数判断字段是否为空，达到模糊查询的效果
         queryWrapper.like(StringUtils.isNotBlank(title), "title", title);
         queryWrapper.like(StringUtils.isNotBlank(content), "content", content);
         queryWrapper.like(StringUtils.isNotBlank(content), "answer", answer);
