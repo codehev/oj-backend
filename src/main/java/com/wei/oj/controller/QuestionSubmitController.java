@@ -1,16 +1,12 @@
 package com.wei.oj.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.wei.oj.annotation.AuthCheck;
 import com.wei.oj.common.BaseResponse;
 import com.wei.oj.common.ErrorCode;
 import com.wei.oj.common.ResultUtils;
-import com.wei.oj.constant.UserConstant;
 import com.wei.oj.exception.BusinessException;
-import com.wei.oj.model.dto.question.QuestionQueryRequest;
 import com.wei.oj.model.dto.questionSubmit.QuestionSubmitAddRequest;
 import com.wei.oj.model.dto.questionSubmit.QuestionSubmitQueryRequest;
-import com.wei.oj.model.entity.Question;
 import com.wei.oj.model.entity.QuestionSubmit;
 import com.wei.oj.model.entity.User;
 import com.wei.oj.model.vo.QuestionSubmitVO;
@@ -33,8 +29,7 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class QuestionSubmitController {
 
-    @Resource
-    private QuestionSubmitService questionSubmitService;
+    @Resource    private QuestionSubmitService questionSubmitService;
 
     @Resource
     private UserService userService;
