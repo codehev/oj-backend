@@ -1,13 +1,11 @@
 package com.wei.oj.model.dto.file;
 
 import java.io.Serializable;
+
 import lombok.Data;
 
 /**
  * 文件上传请求
- *
- * 
- * 
  */
 @Data
 public class UploadFileRequest implements Serializable {

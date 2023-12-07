@@ -4,7 +4,6 @@
 
 > 只需 1 分钟即可完成内容网站的后端！！！大家还可以在此基础上快速开发自己的项目。
 
-
 ## 一、模板目录结构
 
 1. 先阅读README.md
@@ -15,20 +14,18 @@
 6. config：用于接收application.yml中的参数，初始化一些客户端的配置类（比如对象存储客户端）
 7. constant:定义常量
 8. controller:接受请求
-9. esdao:类似mybatis的mapper,用于操作ES 
-10. exception：异常处理相关 
-11. job：任务相关（定时任务、单次任务） 
-12. manager：服务层（一般是定义一些公用的服务、对接第三方API等） 
-13. mapper：mybatis的数据访问层，用于操作数据库 
-14. model:数据模型、实体类、包装类、枚举值 
-15. service：服务层，用于编写业务逻辑 
-16. utils：工具类，各种各样公用的方法 
-17. wxmp：公众号相关的包 
-18. test：单元测试 
-19. MainApplication:项目启动入口 
+9. esdao:类似mybatis的mapper,用于操作ES
+10. exception：异常处理相关
+11. job：任务相关（定时任务、单次任务）
+12. manager：服务层（一般是定义一些公用的服务、对接第三方API等）
+13. mapper：mybatis的数据访问层，用于操作数据库
+14. model:数据模型、实体类、包装类、枚举值
+15. service：服务层，用于编写业务逻辑
+16. utils：工具类，各种各样公用的方法
+17. wxmp：公众号相关的包
+18. test：单元测试
+19. MainApplication:项目启动入口
 20. Dockerfile:用于构建Docker镜像
-
-
 
 ## 二、模板特点
 
@@ -70,7 +67,6 @@
 - 长整数丢失精度解决
 - 多环境配置
 
-
 ## 三、业务功能
 
 - 提供示例 SQL（用户、帖子、帖子点赞、帖子收藏表）
@@ -91,7 +87,6 @@
 ### 3.2架构设计
 
 - 合理分层
-
 
 ## 四、快速上手
 
@@ -147,7 +142,6 @@ spring:
 ```
 
 修改后：
-
 
 ```java
 @SpringBootApplication

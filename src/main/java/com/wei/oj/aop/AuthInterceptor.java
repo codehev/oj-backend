@@ -6,8 +6,10 @@ import com.wei.oj.model.enums.UserRoleEnum;
 import com.wei.oj.annotation.AuthCheck;
 import com.wei.oj.exception.BusinessException;
 import com.wei.oj.service.UserService;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -19,9 +21,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 /**
  * 权限校验 AOP
- *
- * 
- * 
  */
 @Aspect
 @Component

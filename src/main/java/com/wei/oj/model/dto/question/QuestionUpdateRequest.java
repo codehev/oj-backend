@@ -11,9 +11,9 @@ import java.util.List;
 
 /**
  * 更新请求
- *  QuestionUpdateRequest和QuestionEditRequest的区别:
- *  前者是给管理员更新用的，可以指定更多字段;
- *  后者是给普通用户试用的，只能指定部分字段。
+ * QuestionUpdateRequest和QuestionEditRequest的区别:
+ * 前者是给管理员更新用的，可以指定更多字段;
+ * 后者是给普通用户试用的，只能指定部分字段。
  */
 @Data
 public class QuestionUpdateRequest implements Serializable {

@@ -8,8 +8,10 @@ import com.wei.oj.model.entity.User;
 import com.wei.oj.exception.BusinessException;
 import com.wei.oj.service.PostThumbService;
 import com.wei.oj.service.UserService;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,9 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 帖子点赞接口
- *
- * 
- * 
  */
 @RestController
 @RequestMapping("/post_thumb")

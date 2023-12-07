@@ -9,13 +9,11 @@ import com.wei.oj.model.vo.UserVO;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 
 /**
  * 用户服务
- *
- * 
- * 
  */
 public interface UserService extends IService<User> {
 

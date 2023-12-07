@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 /**
  * 提交题目状态枚举
- * 
  */
 public enum QuestionSubmitStatusEnum {
 

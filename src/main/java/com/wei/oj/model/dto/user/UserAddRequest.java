@@ -1,13 +1,11 @@
 package com.wei.oj.model.dto.user;
 
 import java.io.Serializable;
+
 import lombok.Data;
 
 /**
  * 用户创建请求
- *
- * 
- * 
  */
 @Data
 public class UserAddRequest implements Serializable {

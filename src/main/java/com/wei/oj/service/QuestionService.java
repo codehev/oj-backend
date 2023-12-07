@@ -11,10 +11,10 @@ import com.wei.oj.model.vo.QuestionVO;
 import javax.servlet.http.HttpServletRequest;
 
 /**
-* @author whw12
-* @description 针对表【question(题目)】的数据库操作Service
-* @createDate 2023-11-04 21:38:03
-*/
+ * @author whw12
+ * @description 针对表【question(题目)】的数据库操作Service
+ * @createDate 2023-11-04 21:38:03
+ */
 public interface QuestionService extends IService<Question> {
     /**
      * 校验

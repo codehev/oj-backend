@@ -12,9 +12,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 腾讯云对象存储客户端
- *
- * 
- * 
  */
 @Configuration
 // 使用 `prefix` 属性指定只加载指定前缀的数据

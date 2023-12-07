@@ -4,17 +4,17 @@ import com.wei.oj.esdao.PostEsDao;
 import com.wei.oj.model.dto.post.PostEsDTO;
 import com.wei.oj.model.entity.Post;
 import com.wei.oj.service.PostService;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.boot.CommandLineRunner;
 
 /**
  * 全量同步帖子到 es
- *
-
  */
 // todo 取消注释开启任务
 //@Component

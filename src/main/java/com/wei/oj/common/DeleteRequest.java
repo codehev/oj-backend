@@ -1,13 +1,11 @@
 package com.wei.oj.common;
 
 import java.io.Serializable;
+
 import lombok.Data;
 
 /**
  * 删除请求
- *
- * 
- * 
  */
 @Data
 public class DeleteRequest implements Serializable {

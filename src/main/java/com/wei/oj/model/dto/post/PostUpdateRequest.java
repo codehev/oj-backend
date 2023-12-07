@@ -2,13 +2,11 @@ package com.wei.oj.model.dto.post;
 
 import java.io.Serializable;
 import java.util.List;
+
 import lombok.Data;
 
 /**
  * 更新请求
- *
- * 
- * 
  */
 @Data
 public class PostUpdateRequest implements Serializable {

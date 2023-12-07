@@ -29,7 +29,8 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class QuestionSubmitController {
 
-    @Resource    private QuestionSubmitService questionSubmitService;
+    @Resource
+    private QuestionSubmitService questionSubmitService;
 
     @Resource
     private UserService userService;

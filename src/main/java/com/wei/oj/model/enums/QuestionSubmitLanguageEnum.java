@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 public enum QuestionSubmitLanguageEnum {
 
     JAVA("java", "java"),
-    CPLUSPLUS("c++", "c++"),
+    CPLUSPLUS("cpp", "cpp"),
     C("c", "c"),
-    GOLANG("golang", "golang");
+    GOLANG("go", "go");
 
     private final String text;
 
@@ -24,6 +24,10 @@ public enum QuestionSubmitLanguageEnum {
         this.text = text;
         this.value = value;
     }
+    /**
+     * 以下是定义枚举类的方法，默认是没有的得自己写
+     * 例如：QuestionSubmitLanguageEnum.CPLUSPLUS.getText()
+     */
 
     /**
      * 获取值列表

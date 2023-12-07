@@ -4,13 +4,15 @@ import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import lombok.Data;
 
 /**
  * 题目提交
+ *
  * @TableName question_submit
  */
-@TableName(value ="question_submit")
+@TableName(value = "question_submit")
 @Data
 public class QuestionSubmit implements Serializable {
     /**
@@ -62,6 +64,7 @@ public class QuestionSubmit implements Serializable {
 
     /**
      * 是否删除
+     *
      * @TableLogic是MyBatis Plus中的一个注解，主要用于标识实体类中的字段作为逻辑删除标记。
      * 通过这个注解，开发者可以更简单地实现逻辑删除功能，而无需手动维护删除状态。
      * 这是通过在实体类字段上添加@TableLogic注解来实现的。

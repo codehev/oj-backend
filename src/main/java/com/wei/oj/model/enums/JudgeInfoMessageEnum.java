@@ -23,22 +23,6 @@ public enum JudgeInfoMessageEnum {
     SYSTEM_ERROR("judge_system_error", "系统错误");
 
 
-
-
-
-/*    Accepted 成功
-    Wrong Answer 答案错误
-    Compile Error 编译错误
-    Memory Limit Exceeded 内存溢出
-    Time Limit Exceeded 超时
-    Presentation Error 展示错误
-    Output Limit Exceeded 输出溢出
-    Waiting 等待中
-    Dangerous Operation 危险操作
-    Runtime Error 运行错误（用户程序的问题）
-    System Error 系统错误（做系统人的问题）*/
-
-
     private final String text;
 
     private final String value;
@@ -47,6 +31,10 @@ public enum JudgeInfoMessageEnum {
         this.text = text;
         this.value = value;
     }
+    /**
+     * 一下是定义枚举类的方法，默认是没有的，得自己写
+     * 例如：JudgeInfoMessageEnum.ACCEPTED.getText()
+     */
 
     /**
      * 获取值列表

@@ -3,14 +3,12 @@ package com.wei.oj.model.dto.user;
 import com.wei.oj.common.PageRequest;
 
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
  * 用户查询请求
- *
- * 
- * 
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

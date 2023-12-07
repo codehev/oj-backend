@@ -92,7 +92,7 @@ public class QuestionVO implements Serializable {
 
     /**
      * 包装类转对象
-     *
+     * 注意是静态方法，不需要new，直接QuestionVO.voToObj(questionVO)
      * @param questionVO
      * @return
      */
@@ -122,7 +122,7 @@ public class QuestionVO implements Serializable {
 
     /**
      * 对象转包装类
-     *
+     *  注意是静态方法，不需要new，直接QuestionVO.objToVo(question)
      * @param question
      * @return
      */

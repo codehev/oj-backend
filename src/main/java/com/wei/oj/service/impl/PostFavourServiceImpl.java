@@ -13,16 +13,15 @@ import com.wei.oj.model.entity.PostFavour;
 import com.wei.oj.model.entity.User;
 import com.wei.oj.service.PostFavourService;
 import com.wei.oj.service.PostService;
+
 import javax.annotation.Resource;
+
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 帖子收藏服务实现
- *
- * 
- * 
  */
 @Service
 public class PostFavourServiceImpl extends ServiceImpl<PostFavourMapper, PostFavour>

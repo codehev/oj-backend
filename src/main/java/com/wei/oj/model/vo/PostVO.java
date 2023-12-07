@@ -7,14 +7,12 @@ import com.wei.oj.model.entity.Post;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
 /**
  * 帖子视图
- *
- * 
- * 
  */
 @Data
 public class PostVO implements Serializable {

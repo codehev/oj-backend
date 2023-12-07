@@ -11,10 +11,12 @@ import com.wei.oj.constant.FileConstant;
 import com.wei.oj.exception.BusinessException;
 import com.wei.oj.utils.manager.CosManager;
 import com.wei.oj.service.UserService;
+
 import java.io.File;
 import java.util.Arrays;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,9 +27,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 文件接口
- *
- * 
- * 
  */
 @RestController
 @RequestMapping("/file")
