@@ -30,7 +30,10 @@ public class JudgeServiceImpl implements JudgeService {
     private QuestionService questionService;
     @Resource
     private QuestionSubmitService questionSubmitService;
-    //判题管理（简化调用）
+
+    /**
+     * 判题管理（简化调用）
+     */
     @Resource
     private JudgeManager judgeManager;
 
