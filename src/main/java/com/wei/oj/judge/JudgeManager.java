@@ -6,6 +6,7 @@ import com.wei.oj.judge.strategy.JudgeContext;
 import com.wei.oj.judge.strategy.JudgeStrategy;
 import com.wei.oj.model.dto.questionSubmit.JudgeInfo;
 import com.wei.oj.model.entity.QuestionSubmit;
+import com.wei.oj.model.enums.QuestionSubmitLanguageEnum;
 import org.springframework.stereotype.Service;
 
 /**
@@ -25,6 +26,9 @@ public class JudgeManager {
         if ("java".equals(language)) {
             judgeStrategy = new JavaLanguageJudgeStrategy();
         }
+/*        if (QuestionSubmitLanguageEnum.JAVA.equals(language)) {
+            judgeStrategy = new JavaLanguageJudgeStrategy();
+        }*/
         //执行判题,返回JudgeInfo
         return judgeStrategy.doJudge(judgeContext);
     }

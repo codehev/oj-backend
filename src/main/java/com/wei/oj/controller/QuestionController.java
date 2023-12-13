@@ -11,11 +11,16 @@ import com.wei.oj.constant.UserConstant;
 import com.wei.oj.exception.BusinessException;
 import com.wei.oj.exception.ThrowUtils;
 import com.wei.oj.model.dto.question.*;
+import com.wei.oj.model.dto.questionSubmit.QuestionSubmitAddRequest;
+import com.wei.oj.model.dto.questionSubmit.QuestionSubmitQueryRequest;
 import com.wei.oj.model.dto.user.UserQueryRequest;
 import com.wei.oj.model.entity.Question;
+import com.wei.oj.model.entity.QuestionSubmit;
 import com.wei.oj.model.entity.User;
+import com.wei.oj.model.vo.QuestionSubmitVO;
 import com.wei.oj.model.vo.QuestionVO;
 import com.wei.oj.service.QuestionService;
+import com.wei.oj.service.QuestionSubmitService;
 import com.wei.oj.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -39,6 +44,9 @@ public class QuestionController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private QuestionSubmitService questionSubmitService;
 
     private final static Gson GSON = new Gson();
 
@@ -288,6 +296,49 @@ public class QuestionController {
         }
         boolean result = questionService.updateById(question);
         return ResultUtils.success(result);
+    }
+
+
+
+    /**
+     * 提交题目
+     *
+     * @param questionSubmitAddRequest
+     * @param request
+     * @return 提交记录的id
+     */
+    @PostMapping("/question_submit/do")
+    public BaseResponse<Long> doQuestionSubmit(@RequestBody QuestionSubmitAddRequest questionSubmitAddRequest,
+                                               HttpServletRequest request) {
+        if (questionSubmitAddRequest == null || questionSubmitAddRequest.getQuestionId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        // 登录才能提交
+        //获取当前登录用户信息
+        final User loginUser = userService.getLoginUser(request);
+        long result = questionSubmitService.doQuestionSubmit(questionSubmitAddRequest, loginUser);
+        return ResultUtils.success(result);
+    }
+
+    /**
+     * 分页获取题目提交列表（除了管理员外，普通用户只能看到非答案，非提交代码等公开信息）
+     *
+     * @param questionSubmitQueryRequest
+     * @param request
+     * @return
+     */
+    @PostMapping("/question_submit/list/page")
+    public BaseResponse<Page<QuestionSubmitVO>> listQuestionSubmitByPage(
+            @RequestBody QuestionSubmitQueryRequest questionSubmitQueryRequest,
+            HttpServletRequest request) {
+
+        long current = questionSubmitQueryRequest.getCurrent();
+        long size = questionSubmitQueryRequest.getPageSize();
+        Page<QuestionSubmit> questionSubmitPage = questionSubmitService.page(new Page<>(current, size),
+                questionSubmitService.getQueryWrapper(questionSubmitQueryRequest));
+        //获取当前登录用户信息
+        final User loginUser = userService.getLoginUser(request);
+        return ResultUtils.success(questionSubmitService.getQuestionSubmitVOPage(questionSubmitPage, loginUser));
     }
 
 }

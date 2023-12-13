@@ -1,2 +1,6 @@
 
-?	java:S106"+Replace this use of System.out by a logger.(Úª“q
+F	java:S106"+Replace this use of System.out by a logger.(Úª“q8«ÀïÅ1
+U
+java:S1128"8Remove this unused import 'cn.hutool.core.util.StrUtil'.(ƒËôø8‘«ÀïÅ1
+c
+java:S1128"ARemove this unused import 'org.apache.commons.lang3.StringUtils'.(Øœ¼ºúÿÿÿÿ8‘«ÀïÅ1

@@ -54,8 +54,14 @@ public class CodeSandBoxTest {
         CodeSandBox codeSandBox = CodeSandBoxFactory.newInstance(codeSandBoxType);
         //把沙箱实例作为参数，生成一个代理类，也是CodeSandBox类型，直接覆盖codeSandBox
         codeSandBox = new CodeSandBoxProxy(codeSandBox);
-        String code = "int main(){}";
-        String language = QuestionSubmitLanguageEnum.C.getValue();
+        String code = "public class Main {\n" +
+                "    public static void main(String[] args) {\n" +
+                "        int var1 = Integer.parseInt(args[0]);\n" +
+                "        int var2 = Integer.parseInt(args[1]);\n" +
+                "        System.out.println(\"结果:\" + (var1 + var2));\n" +
+                "    }\n" +
+                "}";
+        String language = QuestionSubmitLanguageEnum.JAVA.getValue();
         List<String> inputList = Arrays.asList("1 2", "3 4");
         ExecuteCodeRequest executeCodeRequest = ExecuteCodeRequest.builder()
                 .code(code)
@@ -63,6 +69,8 @@ public class CodeSandBoxTest {
                 .language(language)
                 .build();
         ExecuteCodeResponse executeCodeResponse = codeSandBox.executeCode(executeCodeRequest);
+        System.out.println("executeCodeResponse："+executeCodeResponse);
+        //如果为null，则会抛出AssertionError异常。不为null，则断言不会执行任何操作。
         Assertions.assertNotNull(executeCodeResponse);//判断不为空
     }
 }

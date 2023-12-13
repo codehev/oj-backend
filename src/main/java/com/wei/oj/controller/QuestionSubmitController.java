@@ -27,6 +27,8 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/question_submit")
 @Slf4j
+//标注为过时代码，IDEA提示该类有条删除线
+@Deprecated
 public class QuestionSubmitController {
 
     @Resource

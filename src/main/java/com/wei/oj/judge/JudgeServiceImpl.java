@@ -17,7 +17,6 @@ import com.wei.oj.model.enums.QuestionSubmitStatusEnum;
 import com.wei.oj.model.vo.QuestionSubmitVO;
 import com.wei.oj.service.QuestionService;
 import com.wei.oj.service.QuestionSubmitService;
-import lombok.var;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
