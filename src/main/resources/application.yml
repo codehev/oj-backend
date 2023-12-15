@@ -15,7 +15,7 @@ spring:
   session:
     # todo 取消注释开启分布式 session（须先配置 Redis）
     # store-type: redis
-    # 30 天过期
+    # 30 天过期（用户登录信息保存在session中）
     timeout: 2592000
   # 数据库配置
   # todo 需替换配置
@@ -45,10 +45,10 @@ spring:
       max-file-size: 10MB
 server:
   address: 0.0.0.0
-  port: 8121
+  port: 8181
   servlet:
     context-path: /api
-    # cookie 30 天过期
+    # cookie 30 天过期（用户登录信息保存在session中）
     session:
       cookie:
         max-age: 2592000
