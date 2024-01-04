@@ -13,6 +13,7 @@ import com.wei.oj.model.enums.UserRoleEnum;
 import com.wei.oj.model.vo.LoginUserVO;
 import com.wei.oj.model.vo.UserVO;
 import com.wei.oj.service.UserService;
+import com.wei.oj.utils.RandomUserNameUtils;
 import com.wei.oj.utils.SqlUtils;
 import com.wei.oj.mapper.UserMapper;
 
@@ -70,6 +71,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             User user = new User();
             user.setUserAccount(userAccount);
             user.setUserPassword(encryptPassword);
+            //随机用户名
+            user.setUserName(RandomUserNameUtils.getRandomJianHan(4));
             boolean saveResult = this.save(user);
             if (!saveResult) {
                 throw new BusinessException(ErrorCode.SYSTEM_ERROR, "注册失败，数据库错误");

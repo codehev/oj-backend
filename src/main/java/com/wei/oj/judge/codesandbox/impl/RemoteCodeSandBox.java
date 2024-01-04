@@ -19,13 +19,16 @@ public class RemoteCodeSandBox implements CodeSandBox {
     /**
      * 定义鉴权请求头和密钥(实现比较简单，适合内部系统之间相互调用，缺点不够灵活，如果key泄露或变更，需要重启代码)
      */
+    // todo 远程代码沙箱鉴权
     private static final String AUTH_REQUEST_HEADER = "auth";
     private static final String AUTH_REQUEST_SECRETKEY = "secretkey";
 
     @Override
     public ExecuteCodeResponse executeCode(ExecuteCodeRequest executeCodeRequest) {
         System.out.println("远程代码沙箱");
-//        String url = "http://192.168.200.142:8081/api/executeCode";
+
+        // todo 远程代码沙箱地址
+        //String url = "http://192.168.200.142:8081/api/executeCode";
         String url = "http://127.0.0.1:8182/api/executeCode";
         String jsonStr = JSONUtil.toJsonStr(executeCodeRequest);
         HttpResponse httpResponse = HttpUtil.createPost(url)

@@ -1,6 +1,14 @@
 # 公共配置文件
-# 
-# 
+server:
+  address: 0.0.0.0
+  port: 8181
+  servlet:
+    context-path: /api
+    # cookie 30 天过期（用户登录信息保存在session中）
+    session:
+      cookie:
+        max-age: 2592000
+
 spring:
   application:
     name: oj-backend
@@ -17,6 +25,11 @@ spring:
     # store-type: redis
     # 30 天过期（用户登录信息保存在session中）
     timeout: 2592000
+  # 文件上传
+  servlet:
+    multipart:
+      # 大小限制
+      max-file-size: 10MB
   # 数据库配置
   # todo 需替换配置
   datasource:
@@ -24,34 +37,22 @@ spring:
     url: jdbc:mysql://localhost:3306/oj
     username: root
     password: 1234
-  # Redis 配置
-  # todo 需替换配置，然后取消注释
-  #  redis:
-  #    database: 1
-  #    host: localhost
-  #    port: 6379
-  #    timeout: 5000
-  #    password: 123456
-  # Elasticsearch 配置
-  # todo 需替换配置，然后取消注释
-  #  elasticsearch:
-  #    uris: http://localhost:9200
-  #    username: root
-  #    password: 123456
-  # 文件上传
-  servlet:
-    multipart:
-      # 大小限制
-      max-file-size: 10MB
-server:
-  address: 0.0.0.0
-  port: 8181
-  servlet:
-    context-path: /api
-    # cookie 30 天过期（用户登录信息保存在session中）
-    session:
-      cookie:
-        max-age: 2592000
+  #Redis 配置，第二次级别放错位置
+  #todo 需替换配置，然后取消注释
+  # redis:
+  #   database: 1
+  #   host: localhost
+  #   port: 6379
+  #   timeout: 5000
+  #   password: 123456
+  #Elasticsearch 配置
+  #todo 需替换配置，然后取消注释
+  # elasticsearch:
+  #   uris: http://localhost:9200
+  #   username: root
+  #   password: 123456
+
+
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
@@ -61,6 +62,8 @@ mybatis-plus:
       logic-delete-field: isDelete # 全局逻辑删除的实体字段名
       logic-delete-value: 1 # 逻辑已删除值（默认为 1）
       logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
+
+
 # 微信相关
 wx:
   # 微信公众平台
@@ -82,6 +85,8 @@ wx:
   open:
     appId: xxx
     appSecret: xxx
+
+
 # 对象存储
 # todo 需替换配置
 cos:
@@ -90,6 +95,10 @@ cos:
     secretKey: xxx
     region: xxx
     bucket: xxx
+
+
 #代码沙箱配置
 codeSandBox:
   type: remote
+
+# todo 需替换配置com/wei/oj/judge/codesandbox/impl/RemoteCodeSandBox.java
