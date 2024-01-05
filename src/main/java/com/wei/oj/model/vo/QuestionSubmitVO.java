@@ -65,11 +65,14 @@ public class QuestionSubmitVO implements Serializable {
 
     private UserVO userVO;
 
+    private QuestionVO questionVO;
+
     private static final long serialVersionUID = 1L;
 
     /**
      * 包装类转对象
      * 注意是静态方法，不需要new，直接QuestionSubmitVO.voToObj(questionSubmitVO)
+     *
      * @param questionSubmitVO
      * @return
      */
@@ -91,7 +94,8 @@ public class QuestionSubmitVO implements Serializable {
 
     /**
      * 对象转包装类
-     *注意是静态方法，不需要new，直接QuestionSubmitVO.objToVo(questionSubmit)
+     * 注意是静态方法，不需要new，直接QuestionSubmitVO.objToVo(questionSubmit)
+     *
      * @param questionSubmit
      * @return
      */

@@ -136,21 +136,31 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
     public QuestionSubmitVO getQuestionSubmitVO(QuestionSubmit questionSubmit, User loginUser) {
         QuestionSubmitVO questionSubmitVO = QuestionSubmitVO.objToVo(questionSubmit);
 
-//        User loginUser = userService.getLoginUser(request);
-        Long userId = loginUser.getId();
-        //提交记录用户不是当前登录用户，或不是管理员，进行脱敏
-        if (userId != questionSubmit.getUserId() && !userService.isAdmin(loginUser)) {
+        Long loginUserId = loginUser.getId();
+        Long userId = questionSubmit.getUserId();
+        Long questionId = questionSubmit.getQuestionId();
+
+        // 1. 提交记录用户不是当前登录用户，或不是管理员，进行脱敏
+        if (!loginUserId.equals(userId) && !userService.isAdmin(loginUser)) {
             questionSubmitVO.setCode(null);
         }
-/*        // 1. 关联查询用户信息
-        Long userId = questionSubmit.getUserId();
+        // 2. 关联查询用户信息（userVO这是提交判题的人）
         User user = null;
         if (userId != null && userId > 0) {
             user = userService.getById(userId);
         }
         //将信息脱敏（有选择性的展示字段）
         UserVO userVO = userService.getUserVO(user);
-        questionSubmitVO.setUserVO(userVO);*/
+        questionSubmitVO.setUserVO(userVO);
+
+        // 3. 关联题目信息查询(注意questionVO里包含userVO,注意这是创建题目的人)
+        Question question = null;
+        if (questionId != null && questionId > 0) {
+            question = questionService.getById(questionId);
+        }
+        QuestionVO questionVO = questionService.getQuestionVO(question);
+        questionSubmitVO.setQuestionVO(questionVO);
+
         return questionSubmitVO;
     }
 
