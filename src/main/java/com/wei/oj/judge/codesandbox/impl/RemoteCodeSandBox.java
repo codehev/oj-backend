@@ -29,7 +29,7 @@ public class RemoteCodeSandBox implements CodeSandBox {
 
         // todo 远程代码沙箱地址
         //String url = "http://192.168.200.142:8081/api/executeCode";
-        String url = "http://127.0.0.1:8182/api/executeCode";
+        String url = "http://127.0.0.1:8105/api/executeCode";
         String jsonStr = JSONUtil.toJsonStr(executeCodeRequest);
         HttpResponse httpResponse = HttpUtil.createPost(url)
                 .header(AUTH_REQUEST_HEADER, AUTH_REQUEST_SECRETKEY)
