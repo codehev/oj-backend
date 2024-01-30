@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * 判题信息消息枚举
+ * @author wei
  */
 public enum JudgeInfoMessageEnum {
     ACCEPTED("judge_success", "答案正确"),

@@ -1,6 +1,5 @@
 package com.wei.oj.judge.codesandbox.impl;
 
-import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpStatus;
 import cn.hutool.http.HttpUtil;
@@ -10,7 +9,6 @@ import com.wei.oj.exception.BusinessException;
 import com.wei.oj.judge.codesandbox.CodeSandBox;
 import com.wei.oj.judge.codesandbox.model.ExecuteCodeRequest;
 import com.wei.oj.judge.codesandbox.model.ExecuteCodeResponse;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * 远程代码沙箱（实际调用接口的沙箱）

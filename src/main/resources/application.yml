@@ -4,10 +4,10 @@ server:
   port: 8101
   servlet:
     context-path: /api
-    # cookie 30 天过期（用户登录信息保存在session中）
+    # cookie的有效期，默认为-1 即是和浏览器关闭状态有关
     session:
       cookie:
-        max-age: 2592000
+        max-age: 2592000 # cookie 30 天过期
 
 spring:
   application:
@@ -55,7 +55,7 @@ spring:
 
 mybatis-plus:
   configuration:
-    map-underscore-to-camel-case: false
+    map-underscore-to-camel-case: false # 是否开启自动驼峰命名规则（camel case）映射，默认值：true；即从经典数据库列名（下划线命名） 到经典 Java 属性名（驼峰命名） 的类似映射。
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
